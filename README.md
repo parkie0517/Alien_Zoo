@@ -11,4 +11,4 @@
 ![image](https://github.com/parkie0517/Alien_Zoo/assets/80407632/01dd4da7-ae04-44ea-b706-475de84729dc)
 
 <h1>게임 실행 매뉴얼</h1>
-![image](https://github.com/parkie0517/Alien_Zoo/assets/80407632/df90108b-1b3b-4625-9005-42b40efc2087)
+![image](https://github.com/parkie0517/Alien_Zoo/assets/80407632/27ded156-d70f-4c68-936e-52922ec2849e)
