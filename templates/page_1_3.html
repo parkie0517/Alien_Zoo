@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Zoo</title>
+</head>
+<body>
+    <center>
+        <h1>게임 목표 설명</h1>
+        <section>
+            <!-- Add the image using the <img> tag -->
+            <img src="{{ url_for('static', filename='images/1_3.png') }}" alt="Objective Script">
+        </section>
+        <section>
+            <!-- Add a button below the image -->
+            <form action="{{ url_for('page_2') }}" method="get">
+                <button type="submit">다음</button>
+            </form>
+        </section>
+    </center>
+</body>
+</html>

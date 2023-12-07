@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Zoo</title>
+</head>
+<body>
+    <center>
+        <section>
+            <p>This game is created and designed by Heejun Park</p>
+        </section>
+        <section>
+            <img src="{{ url_for('static', filename='images/1_1.png') }}" alt="Title Image">
+        </section>
+        <section>
+            <form action="{{ url_for('page_1_2') }}" method="get">
+                <button type="submit">게임 시작하기</button>
+        </section>
+    </center>
+</body>
+</html>

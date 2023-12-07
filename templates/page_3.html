@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Zoo</title>
+</head>
+<body>
+    <center>
+        <section>
+            <h1>탐험대 고용 페이지</h1>
+            <p>탐험대 고용 페이지에서는 미션에 보낼 직원들을 고용할 수 있습니다.</p>
+        </section>
+    </center>
+    <section>
+        <!-- 보유한 돈을 표시하는 부분 -->
+        <p>돈: {{ money }}만원</p>
+    </section>
+    <center>
+        <section>
+            <!-- 고용 가능한 Explorer를 볼 수 있는 테이블 -->
+            <p>Explorer 고용하기</p>
+            <p>(Tip. 물, 불, 흙 은하의 Boss 행성에 서식하는 Alien을 포획하려면 해당 은하에 대한 지식을 갖고 있는 Explorer가 필요합니다.)</p>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Explorer ID</th>
+                        <th>Explorer Name</th>
+                        <th>Cost</th>
+                        <th>Major</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for explorer in explorer_data %}
+                        <tr>
+                            <td>{{ explorer[0] }}</td>
+                            <td>{{ explorer[1] }}</td>
+                            <td>{{ explorer[2] }}</td>
+                            <td>{{ explorer[3] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <!-- ID를 입력하고 버튼을 누르면 구매 함수가 실행됨 -->
+            <form action="{{ url_for('buy_explorer') }}" method="post">
+                <label for="n">Explorer ID:</label>
+                <input type="text" id="n" name="n" required>
+        
+                <button type="submit">Buy</button>
+            </form>
+        </section>
+    </center>
+    <center>
+        <section>
+            <!-- 고용 가능한 Pilot을 볼 수 있는 테이블 -->
+            <p>Pilot 고용하기</p>
+            <p>(Tip. Boss 행성에 서식하는 Alien을 포획하려면 Level 2인 Pilot이 필요합니다.)</p>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Pilot ID</th>
+                        <th>Pilot Name</th>
+                        <th>Cost</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pilot in pilot_data %}
+                        <tr>
+                            <td>{{ pilot[0] }}</td>
+                            <td>{{ pilot[1] }}</td>
+                            <td>{{ pilot[2] }}</td>
+                            <td>{{ pilot[3] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <!-- ID를 입력하고 버튼을 누르면 구매 함수가 실행됨 -->
+            <form action="{{ url_for('buy_pilot') }}" method="post">
+                <label for="n">Pilot ID:</label>
+                <input type="text" id="n" name="n" required>
+        
+                <button type="submit">Buy</button>
+            </form>
+        </section>
+    </center>
+    <!-- 뒤로 가기 버튼 -->
+    <form action="{{ url_for('page_2') }}" method="get">
+        <button type="submit">뒤로가기</button>
+    </form>
+</body>
+</html>

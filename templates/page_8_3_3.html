@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Zoo</title>
+</head>
+<body>
+    <center>
+        <section>
+            <h1>흙 은하 Huge 행성</h1>
+            <p>흙고래를 포획하세요!</p>
+        </section>
+    </center>
+    <center>
+        <section>
+            <!-- 포획하기 버튼으로 누를 시 capture_alien 함수로 이동 -->
+            <form action="{{ url_for('capture_alien') }}" method="post">
+                <button type="submit" name="33" value="33">포획하기</button>
+            </form>
+        </section>
+    </center>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Zoo</title>
+</head>
+<body>
+    <center>
+        <section>
+            <h1>탐험대 구성 페이지</h1>
+            <p>탐험시킬 Explorer 2명과 Pilot 1명을 고른 후 "출정" 버튼을 누르면 됩니다.</p>
+            <p>(Tip. Table이 비어있다면, 탐험대 모집 페이지에서 고용을 하세요.)</p>
+        </section>
+    </center>
+    <center>
+        <section>
+            <p>탐험 가능한 Explorer</p>
+            <!-- Flask 서버에서 가져온 데이터로 Table의 Cell을 채움 -->
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Explorer ID</th>
+                        <th>Explorer Name</th>
+                        <th>Major</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for explorer in explorer_data %}
+                        <tr>
+                            <td>{{ explorer[0] }}</td>
+                            <td>{{ explorer[1] }}</td>
+                            <td>{{ explorer[3] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p>탐험 가능한 Pilot</p>
+            <!-- Flask 서버에서 가져온 데이터로 Table의 Cell을 채움 -->
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Pilot ID</th>
+                        <th>Pilot Name</th>
+                        <th>Major</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pilot in pilot_data %}
+                        <tr>
+                            <td>{{ pilot[0] }}</td>
+                            <td>{{ pilot[1] }}</td>
+                            <td>{{ pilot[3] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p> </p>
+            <!-- 탐험대를 구성하기 위해 ID를 입력받는 코드 -->
+            <form action="{{ url_for('build_team') }}" method="post">
+                <label for="e1">Explorer1 ID:</label>
+                <input type="text" id="e1" name="e1" required>
+        
+                <label for="e2">Explorer2 ID:</label>
+                <input type="text" id="e2" name="e2" required>
+        
+                <label for="p1">Pilot1 ID:</label>
+                <input type="text" id="p1" name="p1" required>
+        
+                <button type="submit">출정</button>
+            </form>
+        </section>
+        <p> </p>
+        <!-- 초기화 버튼 -->
+        <form action="{{ url_for('page_5_1') }}" method="get">
+            <button type="submit">초기화</button>
+        </form>
+    </center>
+    <!-- 뒤로가기 버튼 -->
+    <form action="{{ url_for('page_2') }}" method="get">
+        <button type="submit">뒤로가기</button>
+    </form>
+</body>
+</html>

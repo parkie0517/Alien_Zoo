@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Zoo</title>
+</head>
+<body>
+    <center>
+        <section>
+            <h1>은하 목록</h1>
+            <p>탐험할 은하 또는 Boss 행성의 좌표를 입력하세요.</p>
+        </section>
+    </center>
+    <center>
+        <section>
+            <!-- 물 은하 행성 목록 페이지로 이동하는 버튼 -->
+            <form action="{{ url_for('page_6_1') }}" method="get">
+                <button type="submit">물 은하</button>
+            </form>
+            <p> </p>
+            <!-- 불 은하 행성 목록 페이지로 이동하는 버튼 -->
+            <form action="{{ url_for('page_6_2') }}" method="get">
+                <button type="submit">불 은하</button>
+            </form>
+            <p> </p>
+            <!-- 흙 은하 행성 목록 페이지로 이동하는 버튼 -->
+            <form action="{{ url_for('page_6_3') }}" method="get">
+                <button type="submit">흙 은하</button>
+            </form>
+            <p> </p>
+        </section>
+    </center>
+    <center>
+        <section>
+            <!-- Boss 행성을 탐험하기 위해 좌표를 입력 할 수 있는 코드 -->
+            <form action="{{ url_for('process_coordinates') }}" method="post">
+                <label for="x">X Coordinate:</label>
+                <input type="text" id="x" name="x" required>
+        
+                <label for="y">Y Coordinate:</label>
+                <input type="text" id="y" name="y" required>
+        
+                <label for="z">Z Coordinate:</label>
+                <input type="text" id="z" name="z" required>
+        
+                <button type="submit">Submit Coordinates</button>
+            </form>
+        </section>
+    </center>
+    <!-- 동물원으로 돌아가기 버튼 -->
+    <form action="{{ url_for('page_2') }}" method="get">
+        <button type="submit">동물원으로 돌아가기</button>
+    </form>
+</body>
+</html>

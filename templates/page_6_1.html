@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Zoo</title>
+</head>
+<body>
+    <center>
+        <section>
+            <h1>물 은하 행성 목록</h1>
+            <p>탐험할 행성을 클릭하세요.</p>
+        </section>
+    </center>
+    <center>
+        <section>
+            <!-- Small 행성으로 이동하는 버튼 -->
+            <form action="{{ url_for('page_8_1_1') }}" method="get">
+                <button type="submit">Small Planet</button>
+            </form>
+            <!-- Large 행성으로 이동하는 버튼 -->
+            <form action="{{ url_for('page_8_1_2') }}" method="get">
+                <button type="submit">Large Planet</button>
+            </form>
+            <!-- Huge 행성으로 이동하는 버튼 -->
+            <form action="{{ url_for('page_8_1_3') }}" method="get">
+                <button type="submit">Huge Planet</button>
+            </form>
+        </section>
+    </center>
+    <!-- 이전 페이지로 돌아가는 버튼 -->
+    <form action="{{ url_for('page_5_2') }}" method="get">
+        <button type="submit">은하 목록으로 돌아가기</button>
+    </form>
+</body>
+</html>
